@@ -1,3 +1,19 @@
+/* Reset some default browser styles for consistency */
+* {
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the background color for the body */
+body {
+    background-color: #3B5249;
+    font-family: 'Open Sans', sans-serif; /* Default font for body text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the unordered list */
 ul {
     list-style-type: none;
     padding: 0;
@@ -6,29 +22,73 @@ ul {
     justify-content: space-between;
     width: 100%;
     color: #fff;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+
+    
 }
 
+a {
+    text-decoration: none;
+    color: white;
+    
+}
+
+/* Style for the name heading */
 .name {
     text-align: center;
-    color: #D4F1F4;
-    padding: 10px;
+    color: #BEC5AD;
+    padding: 40px;
     font-size: 50px;
-
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font to the name */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6), 4px 4px 8px rgba(0, 0, 0, 0.3); /* Add text shadow for depth */
 }
 
+/* Style for the second section */
 .secondsection {
     display: flex;
     justify-content: center;
+    padding-bottom: 1em;
 }
 
+/* Ensure the unordered list takes the full width of its container */
 .headertype ul {
-    width: 100%; /* Ensures the ul takes the full width of its container */
+    width: 100%;
+
+   
 }
 
+/* Adjust the margin for list items */
 .headertype ul li {
-    margin: 0 50px; /* Adjust the margin to your preference */
+    margin: 0 70px;
+    padding: 10px; /* Add padding inside the border */
+    border: 2px solid #BEC5AD; /* Set the border properties */
+    border-radius: 5px; /* Optional: add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2); /* Add box-shadow for depth */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Optional: add transition for hover effect */
+  
 }
 
-* {
-    background-color: #189AB4;
+.headertype ul li:hover {
+    background-color: #BEC5AD; /* Change background color on hover */
+    color: #3B5249; /* Change text color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3); /* Enhance box-shadow on hover */
+}
+
+/* Style for the about me section */
+.aboutmesection {
+    display: flex;
+    width: 100%; /* Make the section take up the entire width */
+    justify-content: center; /* Center the content horizontally */
+    padding: 20px;
+}
+
+/* Style for the about me content */
+.aboutme {
+    background-color: #fff; /* Set a background color for readability */
+    color: #3B5249; /* Set text color */
+    padding: 20px; /* Add padding inside the box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1); /* Optional: add a slight shadow for depth */
+    flex: 1; /* Make this element flexible within its container */
+    border-radius: 8px;
 }
