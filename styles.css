@@ -1,6 +1,36 @@
-/* Reset some default browser styles for consistency */
+
 * {
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+body {
+    background-color: #3B5249;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -9,22 +39,12 @@ html {
     scroll-behavior: smooth;
 }
 
-
 h2 {
     color: #3B5249;
     font-family: 'Lora', serif;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow for depth */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Set the background color for the body */
-body {
-    background-color: #3B5249;
-    font-family: 'Open Sans', sans-serif; /* Default font for body text */
-    margin: 0;
-    padding: 0;
-}
-
-/* Style for the unordered list */
 ul {
     list-style-type: none;
     padding: 0;
@@ -36,87 +56,75 @@ ul {
     font-family: 'Lora', serif;
     font-weight: bold;
     padding-bottom: 20px;
-    
 }
 
 a {
     text-decoration: none;
     color: white;
-
-    
 }
 
-/* Style for the name heading */
 .name {
     text-align: center;
     color: #BEC5AD;
     padding: 40px;
     font-size: 50px;
-    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font to the name */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6), 4px 4px 8px rgba(0, 0, 0, 0.3); /* Add text shadow for depth */
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6), 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Style for the second section */
 .secondsection {
     display: flex;
     justify-content: center;
     padding-bottom: 1em;
 }
 
-/* Ensure the unordered list takes the full width of its container */
 .headertype ul {
     width: 100%;
-
-   
 }
 
-/* Adjust the margin for list items */
 .headertype ul li {
     margin: 0 70px;
-    padding: 10px; /* Add padding inside the border */
-    border: 2px solid #BEC5AD; /* Set the border properties */
-    border-radius: 5px; /* Optional: add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2); /* Add box-shadow for depth */
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Optional: add transition for hover effect */
-  
+    padding: 10px;
+    border: 2px solid #BEC5AD;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .headertype ul li:hover {
-    background-color: #BEC5AD; /* Change background color on hover */
-    color: #3B5249; /* Change text color on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3); /* Enhance box-shadow on hover */
+    background-color: #BEC5AD;
+    color: #3B5249;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Style for the about me section */
 .aboutmesection {
     display: flex;
-    width: 100%; /* Make the section take up the entire width */
-    justify-content: center; /* Center the content horizontally */
+    width: 100%;
+    justify-content: center;
     padding: 20px;
 }
 
-/* Style for the about me content */
 .aboutme {
-    background-color: #fff; /* Set a background color for readability */
-    color: #3B5249; /* Set text color */
-    padding: 20px; /* Add padding inside the box */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 1); /* Optional: add a slight shadow for depth */
-    flex: 1; /* Make this element flexible within its container */
+    background-color: #fff;
+    color: #3B5249;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+    flex: 1;
     border-radius: 8px;
     font-size: 24px;
 }
 
 .image img {
     max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .image {
-    flex: 1; /* Make the image container flexible */
+    flex: 1;
     display: flex;
-    align-items: center; /* Center the image vertically */
+    align-items: center;
 }
 
 #project {
@@ -134,6 +142,8 @@ a {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    padding: 1em;
+    margin: 1em;
 }
 
 .project-card {
@@ -144,14 +154,31 @@ a {
     width: 300px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    position: relative; /* To position the pseudo-element */
-    border: 1px solid #ccc; /* Polaroid border color */
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Ensure pseudo-element doesn't block clicks */
+}
+
+.project-card:hover::after {
+    opacity: 1;
 }
 
 .project-card img {
     max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    border-bottom: 1px solid #ccc; /* Border between image and caption */
+    height: auto;
+    border-bottom: 1px solid #ccc;
 }
 
 .project-card h3 {
@@ -170,6 +197,8 @@ a {
     color: #3B5249;
     text-decoration: none;
     font-weight: bold;
+    position: relative; 
+    z-index: 1;
 }
 
 .project-card:hover {
@@ -177,28 +206,36 @@ a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Add the pseudo-element to create the Polaroid look */
 .project-card::before {
     content: '';
     position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
     background: white;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     z-index: -1;
     transform: rotate(-2deg);
+    transition: transform 0.3s;
 }
 
 .project-card:hover::before {
     transform: rotate(0deg);
 }
 
+#skills {
+    text-align: center;
+}
 
 .skills-section {
     padding: 20px;
     background-color: #A4B494;
+    overflow: hidden;
+    position: relative;
+}
+
+.skills-section.animate {
+    animation: slideIn 1s ease-out;
 }
 
 .skills-grid {
@@ -208,28 +245,25 @@ a {
     justify-content: center;
 }
 
-#skills {
-    text-align: center;
-    padding: 1em;
-    color: #3B5249;
-    font-family: 'Lora', serif;
-}
-
 .skill {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 150px; /* Limit the width of each skill box */
-    margin: 10px; /* Add some margin around each skill box */
+    max-width: 150px;
+    margin: 10px;
 }
 
 .skill img {
-    max-width: 100%; /* Ensure image does not exceed the container width */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-
+.skill img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
 
 #contact {
     text-align: center;
@@ -267,17 +301,69 @@ a {
     text-decoration: underline;
 }
 
-.social-links {
-    margin-top: 20px;
-}
-
 .social-links a {
     margin: 0 10px;
     display: inline-block;
+    pointer-events: auto; /* Ensure links are clickable */
 }
 
 .social-links img {
-    width: 100px; 
-    height: auto;
+    width: 40px;
+    height: 40px;
     vertical-align: middle;
+}
+
+.social-links {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1; /* Ensure links are below fun-fact button */
+}
+
+#fun-fact {
+    text-align: center;
+    color: #BEC5AD;
+    padding: 1em;
+}
+
+.funfact-section {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    z-index: 1; 
+}
+
+#fun-fact-button {
+    z-index: 2; 
+    position: relative;
+    pointer-events: auto;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.3);;
+}
+
+
+.funfact-section {
+    padding: 20px;
+    background: #3B5249;
+    color: white;
+    text-align: center;
+}
+
+
+.funfact-box {
+    background-color: #BEC5AD;
+    color: black;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.funfact-box.reveal {
+    display: block; 
+    opacity: 1;
+    transform: scale(1);
 }
